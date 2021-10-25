@@ -70,7 +70,7 @@ module_name instance_name(
 
 ​	在使用四个一位加法器拼接成一个四位串行加法器的时候，需要注意全加器的cin和cout信号的连接：
 
-<img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211015202507802.png" alt="image-20211015202507802" style="zoom: 50%;" />
+<img src="./../img/add4.png" style="zoom: 50%;" />
 
 ​	需要把四位加法器的cin作为第一个加法器的cin，第一个加法器的cout当作第二个加法器的cin，以此类推，那么例化四个一位加法器就是使用下面的方式：
 
@@ -128,7 +128,7 @@ module decode_38(
 	always@(data_in) 
    	begin 
         case(data_in)
-        	3'd0:data_out = 8'b00000001;
+            3'd0:data_out = 8'b00000001;
             3'd1:data_out = 8'b00000010;
             3'd2:data_out = 8'b00000100;
             3'd3:data_out = 8'b00001000;
@@ -209,9 +209,10 @@ endmodule
   (非阻塞赋值"<="用于时序逻辑对reg类型的更新，具体对比后续再说)
 
 - 如果是进行逻辑位运算，建议使用`&、|、^、~`，如果是条件判断，建议使用`&&、||、！`
+
 - 运算优先级如下图所示：
 
-<img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211015225602803.png" alt="image-20211015225602803" style="zoom:67%;" />
+<img src="./../img/priority.png" style="zoom:67%;" />
 
 
 
@@ -225,5 +226,5 @@ endmodule
 
 #### 一些教程链接：
 
-[1.1 Verilog 教程 | 菜鸟教程 (runoob.com)](https://www.runoob.com/w3cnote/verilog-tutorial.html)
+[Verilog 教程 | 菜鸟教程 ](https://www.runoob.com/w3cnote/verilog-tutorial.html)
 

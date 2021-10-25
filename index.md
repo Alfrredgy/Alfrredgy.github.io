@@ -1,4 +1,4 @@
-## <center>Welcome to My Blog
+
 
 [Git博客搭建方法](./docs/blog.md)
 

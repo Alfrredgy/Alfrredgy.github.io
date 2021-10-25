@@ -41,7 +41,7 @@ module add_1(				//定义时 module + 模块名 + （端口信号）;
     
     output out		,
     output carry_out		//最后一个信号不用分隔
-	);						//以";"结束
+    );						//以";"结束
     // assign语句，对wire类型信号进行赋值
     // {}表示位拼接，下面的意思就是把carry_out和out两个一位信号组合成一个两位信号
     // 这样相加的时候进位就自然而然地就是第二位了
@@ -65,7 +65,7 @@ module_name instance_name(
     .module_signal_1(instance_signal_1),
     ... ...
     .module_signal_2(instance_signal_2)
-	);
+    );
 ```
 
 ​	在使用四个一位加法器拼接成一个四位串行加法器的时候，需要注意全加器的cin和cout信号的连接：
@@ -89,7 +89,7 @@ module add_4(				// 四位加法器模块及信号
     
     // 一位加法器模块本名(子模块名)  例化模块名(父模块名)
     add_1 	instance_add_4_1(
-    	// add_1信号  例化时实际信号
+        // add_1信号  例化时实际信号
         //或子模块端口名 父模块端口名
         .add_1		(add_4_1[0]),
         .add_2		(add_4_2[0]),
@@ -106,7 +106,7 @@ module add_4(				// 四位加法器模块及信号
         .out		(out_4[1])	,
         .carry_out	(carry_out1)
     );
-	... ...
+    ... ...
     
 endmodule
 ```
@@ -121,12 +121,12 @@ endmodule
 module decode_38(
     input  [2:0] data_in,
     output reg [7:0] data_out
-	);
+    );
     // 一般来说认为@(posedge/negedge clk)是时序逻辑，@某个信号的算作组合逻辑
     // 组合逻辑的定义是当前的输出只取决于当前的输入，与电路原来的状态无关，
     // 虽然这里使用了一个reg信号，下面的这类写法算是在模拟组合逻辑（个人觉得不是很恰当，建议少用
-	always@(data_in) 
-   	begin 
+    always@(data_in) 
+       begin 
         case(data_in)
             3'd0:data_out = 8'b00000001;
             3'd1:data_out = 8'b00000010;
@@ -148,17 +148,17 @@ endmodule
 
 ```verilog
 module decoder_38(
-	input  [2:0] in,
-	output [7:0] out
-	);
-	assign out[0] = (in == 3’d0);
-	assign out[1] = (in == 3’d1);
-	assign out[2] = (in == 3’d2);
-	assign out[3] = (in == 3’d3);
-	assign out[4] = (in == 3’d4);
-	assign out[5] = (in == 3’d5);
-	assign out[6] = (in == 3’d6);
-	assign out[7] = (in == 3’d7);
+    input  [2:0] in,
+    output [7:0] out
+    );
+    assign out[0] = (in == 3’d0);
+    assign out[1] = (in == 3’d1);
+    assign out[2] = (in == 3’d2);
+    assign out[3] = (in == 3’d3);
+    assign out[4] = (in == 3’d4);
+    assign out[5] = (in == 3’d5);
+    assign out[6] = (in == 3’d6);
+    assign out[7] = (in == 3’d7);
 endmodule
 ```
 
@@ -166,17 +166,17 @@ endmodule
 
 ```verilog
 module encoder_8_3(
-	input [7:0] in,
-	output [2:0] out
-	);
-	assign out = in[0] ? 3’d0 :
-				 in[1] ? 3’d1 :
-				 in[2] ? 3’d2 :
-				 in[3] ? 3’d3 :
-				 in[4] ? 3’d4 :
-				 in[5] ? 3’d5 :
-				 in[6] ? 3’d6 :
-						 3’d7;
+    input [7:0] in,
+    output [2:0] out
+    );
+    assign out = in[0] ? 3’d0 :
+                 in[1] ? 3’d1 :
+                 in[2] ? 3’d2 :
+                 in[3] ? 3’d3 :
+                 in[4] ? 3’d4 :
+                 in[5] ? 3’d5 :
+                 in[6] ? 3’d6 :
+                         3’d7;
 endmodule
 ```
 
@@ -226,5 +226,5 @@ endmodule
 
 #### 一些教程链接：
 
-[Verilog 教程 | 菜鸟教程 ](https://www.runoob.com/w3cnote/verilog-tutorial.html)
+[Verilog 菜鸟教程](https://www.runoob.com/w3cnote/verilog-tutorial.html)
 

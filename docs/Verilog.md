@@ -431,7 +431,7 @@ endmodule
 [Verilog 菜鸟教程](https://www.runoob.com/w3cnote/verilog-tutorial.html)
 
 
-<center>[返回首页](./../index.md)
+[返回首页](./../index.md)
 
 
 <script src="https://utteranc.es/client.js"

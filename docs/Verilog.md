@@ -305,15 +305,15 @@ endmodule
 
 1. 把四位加法器模块和一位加法器模块放在一个文件里
 
-   <img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211025235126546.png" alt="image-20211025235126546" style="zoom:80%;" />
+   <img src="./../img/image-verilog-v2-01.png" style="zoom:80%;" />
 
 2. 创建两个文件，建议先创建顶层的add_4文件，再创建add_1。不过不按顺序的话Vivado也会自动调整好顶层文件。调整好后如下所示：
 
-   <img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026000438270.png" alt="image-20211026000438270" style="zoom:80%;" />
+   <img src=./../img/image-verilog-v2-02.png style="zoom:80%;" />
 
 3. 顶层文件不要随意改变，否则会造成测试的时候信号对不上，产生高阻态和不定态（我有一次就是设置了top文件造成高阻态干坐一节课等老师过来才解决）
 
-<img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026000804482.png" alt="image-20211026000804482" style="zoom: 67%;" />
+<img src="./../img/image-verilog-v2-03.png" style="zoom: 67%;" />
 
 
 
@@ -323,11 +323,11 @@ endmodule
 
 ​    还是以四位加法器为例，波形跑出来后的画面如下所示
 
-<img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026001257697.png" alt="image-20211026001257697" style="zoom:80%;" />
+<img src="./../img/image-verilog-v2-04.png" style="zoom:80%;" />
 
 ​    有四个地方需要注意
 
-- 仿真快捷键：<img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026001354468.png" alt="image-20211026001354468" style="zoom:80%;" />
+- 仿真快捷键：<img src="./../img/image-verilog-v2-06.png" style="zoom:80%;" />
 
   1. `restart`：从头开始，重新仿真，但是测试文件修改之后用这个没法得到新的测试，用的不多。
   2. `run all`：一直进行测试，直到程序停止，数电实验用的不多，体系结构有专门的测试程序会经常用
@@ -339,7 +339,7 @@ endmodule
 
 - 模块(信号范围)选择
 
-  <img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026002305130.png" alt="image-20211026002305130" style="zoom:80%;" />
+  <img src="./../img/image-verilog-v2-08.png" style="zoom:80%;" />
 
     按照我们的设计，测试文件位于顶层，例化`add_4`，而`add_4`又例化四个`add_1`，呈现出上面这样的树状结构。
 
@@ -347,11 +347,11 @@ endmodule
 
   - 测试模块及信号
 
-  <img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026002417426.png" alt="image-20211026002417426" style="zoom: 80%;" />
+  <img src="./../img/image-verilog-v2-10.png" style="zoom: 80%;" />
 
   - add_4模块及信号
 
-  <img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026002518553.png" alt="image-20211026002518553" style="zoom:80%;" />
+  <img src="./../img/image-verilog-v2-11.png" alt="image-20211026002518553" style="zoom:80%;" />
 
   
 
@@ -359,7 +359,7 @@ endmodule
 
     在`objects`中看到具体信号之后，可以通过鼠标拖拽的方式，将某一信号加入到波形中。比如，仿真默认只给出测试模块的信号，可以把`add_4`的内部信号拖过去查看：
 
-  <img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026002745222.png" alt="image-20211026002745222" style="zoom:80%;" />
+  <img src="./../img/image-verilog-v2-12.png" style="zoom:80%;" />
 
     这里加入三个信号，一个是`add_4`的输出`out_4`，还有两个`add_4`内部定义的进位信号。这时候会发现有一个是有波形的，两个是没有任何显示的，这是因为`out_4`本来就是输出到测试模块的。需要重新运行仿真才能看到另外两个(Tips: 点击右上角的`relaunch`)。
 
@@ -373,10 +373,10 @@ endmodule
 
   - 可以用鼠标缩放
   - 可以用上下左右来控制光标(左右是移动到最近的不同值的附近)
-  - <img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026003810184.png" alt="image-20211026003810184" style="zoom:80%;" />查找某一特定值(计组和体系结构用的多)
-  - <img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026003846874.png" alt="image-20211026003846874" style="zoom:80%;" />移动到仿真开始和结束
-  - <img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026003907615.png" alt="image-20211026003907615" style="zoom:80%;" />左右移动(和左右键一样，移动到最近的不同值的附近)
-  - <img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026004017831.png" alt="image-20211026004017831" style="zoom:80%;" />添加光标(用处不多，写报告的时候可以用一用，指示信号位置)
+  - <img src="./../img/image-verilog-v2-15.png" style="zoom:80%;" />查找某一特定值(计组和体系结构用的多)
+  - <img src="./../img/image-verilog-v2-16.png" style="zoom:80%;" />移动到仿真开始和结束
+  - <img src="./../img/image-verilog-v2-17.png" style="zoom:80%;" />左右移动(和左右键一样，移动到最近的不同值的附近)
+  - <img src="./../img/image-verilog-v2-18.png" style="zoom:80%;" />添加光标(用处不多，写报告的时候可以用一用，指示信号位置)
 
 
 
@@ -384,11 +384,11 @@ endmodule
 
 1. 找到`settings`:
 
-   <img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026003217544.png" alt="image-20211026003217544" style="zoom:80%;" />
+   <img src="./../img/image-verilog-v2-13.png" style="zoom:80%;" />
 
 2. 勾选`log_all_signals`:
 
-   <img src="C:\Users\12900\AppData\Roaming\Typora\typora-user-images\image-20211026003345275.png" alt="image-20211026003345275" style="zoom:80%;" />
+   <img src="./../img/image-verilog-v2-14.png" style="zoom:80%;" />
 
 
 

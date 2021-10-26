@@ -220,8 +220,8 @@ module test_xxx(    );
 
     // 对模块输入reg信号进行初始化，输出信号不用初始化
     initial begin
-        input_signal_1 = x'b0; (一般初始化为0，特殊情况按照要求进行)
-        input_signal_2 = x'b0; (x是指该信号位宽，直接写0也可以，但这样显得规范一些)
+        input_signal_1 = x'b0; //一般初始化为0，特殊情况按照要求进行
+        input_signal_2 = x'b0; //x是指该信号位宽，直接写0也可以，这样显得规范一些
         ... ...
     end
 
@@ -430,6 +430,10 @@ endmodule
 
 [Verilog 菜鸟教程](https://www.runoob.com/w3cnote/verilog-tutorial.html)
 
+
+<center>[返回首页](./../index.md)
+
+
 <script src="https://utteranc.es/client.js"
   repo="Alfrredgy/Alfrredgy.github.io"
   issue-term="url"
@@ -437,3 +441,4 @@ endmodule
   crossorigin="anonymous"
   async>
 </script>
+

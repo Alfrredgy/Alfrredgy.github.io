@@ -339,7 +339,7 @@ endmodule
 
 - 模块(信号范围)选择
 
-  <img src="./../img/image-verilog-v2-08.png" style="zoom:80%;" />
+  <img src="./../img/image-verilog-v2-09.png" style="zoom:80%;" />
 
     按照我们的设计，测试文件位于顶层，例化`add_4`，而`add_4`又例化四个`add_1`，呈现出上面这样的树状结构。
 
@@ -430,3 +430,10 @@ endmodule
 
 [Verilog 菜鸟教程](https://www.runoob.com/w3cnote/verilog-tutorial.html)
 
+<script src="https://utteranc.es/client.js"
+  repo="Alfrredgy/Alfrredgy.github.io"
+  issue-term="url"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script>
